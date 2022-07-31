@@ -1,6 +1,6 @@
-package com.example.vyvsyss4graphql.dto;
+package com.example.vyvsyss4graphql.data.dto;
 
-import com.example.vyvsyss4graphql.entita.SubDepartmentE;
+import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import lombok.Getter;
 import lombok.Setter;
 

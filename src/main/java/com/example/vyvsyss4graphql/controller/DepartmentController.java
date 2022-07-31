@@ -1,7 +1,7 @@
 package com.example.vyvsyss4graphql.controller;
 
-import com.example.vyvsyss4graphql.entita.DepartmentE;
-import com.example.vyvsyss4graphql.entita.SubDepartmentE;
+import com.example.vyvsyss4graphql.data.dto.DepartmentDTO;
+import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.service.DepartmentService;
 import com.example.vyvsyss4graphql.service.SubDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class DepartmentController {
     }
 
     @QueryMapping
-    public DepartmentE getDepartmentById(@Argument Integer id) {
-        return departmentService.findById(Long.valueOf(id)).get();
+    public DepartmentDTO getDepartmentById(@Argument Integer id) {
+        return departmentService.findById(Long.valueOf(id));
     }
 }

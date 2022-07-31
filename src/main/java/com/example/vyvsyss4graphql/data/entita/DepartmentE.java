@@ -1,4 +1,4 @@
-package com.example.vyvsyss4graphql.entita;
+package com.example.vyvsyss4graphql.data.entita;
 
 import lombok.Data;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
