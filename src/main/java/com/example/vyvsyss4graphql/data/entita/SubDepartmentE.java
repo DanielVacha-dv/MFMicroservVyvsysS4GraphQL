@@ -1,5 +1,6 @@
-package com.example.vyvsyss4graphql.entita;
+package com.example.vyvsyss4graphql.data.entita;
 
+import com.example.vyvsyss4graphql.entita.DepartmentE;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +30,7 @@ public class SubDepartmentE {
     @Column(name = "subdepartment_comment")
     private String subDepartmentComment;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "department_ID", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private DepartmentE department;
@@ -38,11 +39,11 @@ public class SubDepartmentE {
 
     }
 
-    public SubDepartmentE(Long subDepartmentId,DepartmentE department,String subDepartmentName, String subDepartmentComment) {
+    public SubDepartmentE(Long subDepartmentId, DepartmentE department, String subDepartmentName, String subDepartmentComment) {
         this.subDepartmentId = subDepartmentId;
         this.subDepartmentName = subDepartmentName;
         this.subDepartmentComment = subDepartmentComment;
-        this.department=department;
+        this.department = department;
     }
 
     @Override

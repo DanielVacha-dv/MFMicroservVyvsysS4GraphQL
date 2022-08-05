@@ -1,5 +1,7 @@
 package com.example.vyvsyss4graphql.entita;
 
+import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,12 +9,12 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
 @Setter
 @Getter
+//@Builder
 @Table(name = "department")
 public class DepartmentE {
 
