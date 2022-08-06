@@ -1,7 +1,9 @@
 package com.example.vyvsyss4graphql.controller;
 
+import com.example.vyvsyss4graphql.data.mapper.DepartmentMapper;
+import com.example.vyvsyss4graphql.dto.DepartmentDTO;
 import com.example.vyvsyss4graphql.entita.DepartmentE;
-import com.example.vyvsyss4graphql.entita.SubDepartmentE;
+//import com.example.vyvsyss4graphql.entita.SubDepartmentE;
 import com.example.vyvsyss4graphql.service.DepartmentService;
 import com.example.vyvsyss4graphql.service.SubDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +21,16 @@ public class DepartmentController {
     @Autowired
     private SubDepartmentService subDepartmentService;
 
+    private DepartmentMapper departmentMapper;
+
 
     @QueryMapping
-    public List<DepartmentE> getDepartment() {
+    public List<DepartmentDTO> getDepartment() {
         return departmentService.findAll();
     }
 
     @QueryMapping
     public DepartmentE getDepartmentById(@Argument Integer id) {
-        return departmentService.findById(Long.valueOf(id)).get();
+        return departmentMapper.departmentDTOToDepartmentE(departmentService.findById(Long.valueOf(id)));
     }
 }

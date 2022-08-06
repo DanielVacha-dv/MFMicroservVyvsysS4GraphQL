@@ -1,8 +1,6 @@
 package com.example.vyvsyss4graphql.controller;
 
-import com.example.vyvsyss4graphql.entita.DepartmentE;
-import com.example.vyvsyss4graphql.entita.SubDepartmentE;
-import com.example.vyvsyss4graphql.service.DepartmentService;
+import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import com.example.vyvsyss4graphql.service.SubDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
