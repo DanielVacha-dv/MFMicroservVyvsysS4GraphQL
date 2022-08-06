@@ -1,1 +1,10 @@
+
+pluginManagement {
+    plugins {
+        id 'org.springframework.boot' version "${vSpringBoot}"
+        id 'io.spring.dependency-management' version "${vDependencyManagement}"
+        id 'net.linguica.maven-settings' version "${vMavenSettings}"
+    }
+}
+
 rootProject.name = 'VyvsysS4GraphQL'
