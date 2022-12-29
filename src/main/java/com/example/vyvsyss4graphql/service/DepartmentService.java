@@ -35,7 +35,6 @@ public class DepartmentService {
         for (DepartmentE elem : allDepa) {
             allDTO.add(mapper.departmentEToDepartmentDTO(elem));
         }
-//        allDepa.forEach(el -> allDTO.add(mapper.departmentEToDepartmentDTO(el)));
         return allDTO;
     }
     public List<DepartmentE> findAllEntities() {
@@ -44,17 +43,14 @@ public class DepartmentService {
 
     public DepartmentDTO findById(Long id) {
         Optional<DepartmentE> byId = departmentRepository.findById(id);
-        return byId.map(departmentE -> mapper.departmentEToDepartmentDTO(departmentE)).orElse(null);
+        return byId.map(mapper::departmentEToDepartmentDTO).orElse(null);
+    }
+    public Optional<DepartmentE> findByIdEnt(Long id) {
+        return departmentRepository.findById(id);
     }
 
     public Long createDepartment(DepartmentInput DepartmentInput) {
         DepartmentE dE=  mapper.departmentInputToDepartmentE(DepartmentInput);
-        dE= departmentRepository.save(dE);
-        return dE.getDepartmentId();
-    }
-    public Long createDepartmentName(String name, String comment ) {
-        DepartmentE dE=  mapper.departmentDTOToDepartmentE(DepartmentDTO.builder().name(name).comment(comment
-        ).build());
         dE= departmentRepository.save(dE);
         return dE.getDepartmentId();
     }

@@ -9,7 +9,7 @@ type Query {
 }
 type Mutation {
     createDepartment(input: DepartmentInput!): ID
-    createDepartmentName(name: String!,comment: String): ID
+    createSubDepartment(input: SubDepartmentInput!): ID
 }
 
 type Department {
@@ -29,4 +29,10 @@ type SubDepartment {
     subDepartmentName: String
     subDepartmentComment: String
 #    Department : Department
+}
+
+input SubDepartmentInput {
+    departmentID: Int
+    subDepartmentName: String
+    subDepartmentComment: String
 }

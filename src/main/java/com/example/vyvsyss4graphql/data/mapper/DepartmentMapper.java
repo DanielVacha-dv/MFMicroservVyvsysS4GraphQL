@@ -20,6 +20,7 @@ public interface DepartmentMapper {
     default DepartmentE departmentDTOToDepartmentE(DepartmentDTO departmentDTO) {
         return DepartmentE.builder().name(departmentDTO.getName()).comment(departmentDTO.getComment()).build();
     }
+
     default DepartmentE departmentInputToDepartmentE(DepartmentInput departmentInput) {
         return DepartmentE.builder().name(departmentInput.getName()).comment(departmentInput.getComment()).build();
     }

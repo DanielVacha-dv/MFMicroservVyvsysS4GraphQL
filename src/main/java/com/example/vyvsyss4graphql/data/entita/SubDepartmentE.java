@@ -1,8 +1,6 @@
 package com.example.vyvsyss4graphql.data.entita;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -14,6 +12,8 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @Getter
 @Table(name = "subdepartment")
+@Builder
+@AllArgsConstructor
 public class SubDepartmentE {
 
     @Id
