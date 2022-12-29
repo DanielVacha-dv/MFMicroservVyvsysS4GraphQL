@@ -19,6 +19,6 @@ public class DepartmentDTO {
     @JsonProperty("comment")
     private String comment;
     @JsonProperty("subDepartmentL")
-    private List<SubDepartmentE> subDepartmentL;
+    private List<SubDepartmentDTO> subDepartmentL;
 
 }

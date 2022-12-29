@@ -21,9 +21,6 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    private DepartmentMapper departmentMapper;
-
-
     @QueryMapping
     public List<DepartmentDTO> getDepartment() {
         List<DepartmentDTO> all = departmentService.findAll();
@@ -32,8 +29,8 @@ public class DepartmentController {
     }
 
     @QueryMapping
-    public DepartmentE getDepartmentById(@Argument Integer id) {
-        return departmentMapper.departmentDTOToDepartmentE(departmentService.findById(Long.valueOf(id)));
+    public DepartmentDTO getDepartmentById(@Argument Integer id) {
+        return departmentService.findById(Long.valueOf(id));
     }
 
     @MutationMapping

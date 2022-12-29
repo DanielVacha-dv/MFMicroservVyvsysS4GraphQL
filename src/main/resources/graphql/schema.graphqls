@@ -28,7 +28,6 @@ type SubDepartment {
     subDepartmentId: Int
     subDepartmentName: String
     subDepartmentComment: String
-#    Department : Department
 }
 
 input SubDepartmentInput {
