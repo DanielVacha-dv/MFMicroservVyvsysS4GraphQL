@@ -1,5 +1,6 @@
 package com.example.vyvsyss4graphql.service;
 
+import com.example.vyvsyss4graphql.data.dto.input.DepartmentInput;
 import com.example.vyvsyss4graphql.data.mapper.DepartmentMapper;
 import com.example.vyvsyss4graphql.data.dto.DepartmentDTO;
 import com.example.vyvsyss4graphql.data.entita.DepartmentE;
@@ -26,7 +27,7 @@ public class DepartmentService {
     @Autowired
     private SubDepartmentRepository subDepartmentRepository;
 
-    private DepartmentMapper mapper = Mappers.getMapper(DepartmentMapper.class);
+    private final DepartmentMapper mapper = Mappers.getMapper(DepartmentMapper.class);
 
     public List<DepartmentDTO> findAll() {
         List<DepartmentE> allDepa = StreamSupport.stream(departmentRepository.findAll().spliterator(), false).toList();
@@ -44,5 +45,17 @@ public class DepartmentService {
     public DepartmentDTO findById(Long id) {
         Optional<DepartmentE> byId = departmentRepository.findById(id);
         return byId.map(departmentE -> mapper.departmentEToDepartmentDTO(departmentE)).orElse(null);
+    }
+
+    public Long createDepartment(DepartmentInput DepartmentInput) {
+        DepartmentE dE=  mapper.departmentInputToDepartmentE(DepartmentInput);
+        dE= departmentRepository.save(dE);
+        return dE.getDepartmentId();
+    }
+    public Long createDepartmentName(String name, String comment ) {
+        DepartmentE dE=  mapper.departmentDTOToDepartmentE(DepartmentDTO.builder().name(name).comment(comment
+        ).build());
+        dE= departmentRepository.save(dE);
+        return dE.getDepartmentId();
     }
 }

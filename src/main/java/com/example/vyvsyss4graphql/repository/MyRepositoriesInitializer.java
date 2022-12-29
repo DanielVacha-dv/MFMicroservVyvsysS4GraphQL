@@ -27,7 +27,6 @@ public class MyRepositoriesInitializer implements ApplicationRunner {
     @Autowired
     private DepartmentService departmentService;
 
-    private DepartmentMapper mapper = Mappers.getMapper(DepartmentMapper.class);
 
     @Override
     public void run(ApplicationArguments args) {

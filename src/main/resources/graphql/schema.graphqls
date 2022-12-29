@@ -1,11 +1,15 @@
+schema {
+    mutation: Mutation
+    query: Query
+}
 type Query {
     getDepartment: [Department]
     getSubDepartment: [SubDepartment]
     getDepartmentById (id: Int): Department
-#    greeting: String
-    #    artifactRepositories : [ArtifactRepository]
-    #    artifactRepository(id : ID!) : ArtifactRepository
-    #    project(slug: ID!): Project
+}
+type Mutation {
+    createDepartment(input: DepartmentInput!): ID
+    createDepartmentName(name: String!,comment: String): ID
 }
 
 type Department {
@@ -15,43 +19,14 @@ type Department {
     subDepartmentL: [SubDepartment]
 }
 
+input DepartmentInput {
+    name: String
+    comment: String
+}
+
 type SubDepartment {
     subDepartmentId: Int
     subDepartmentName: String
     subDepartmentComment: String
 #    Department : Department
 }
-#
-#type ArtifactRepository {
-#    id: ID!
-#    name: String!
-#    url: String!
-#    snapshotsEnabled: Boolean
-#}
-#
-#type Project {
-#    slug: ID!
-#    name: String!
-#    repositoryUrl: String!
-#    status: ProjectStatus!
-#    releases: [Release]
-#}
-#
-#type Release {
-#    version: String!
-#    status: ReleaseStatus!
-#    current: Boolean
-#}
-#
-#enum ProjectStatus {
-#    ACTIVE
-#    COMMUNITY
-#    INCUBATING
-#    ATTIC
-#}
-#
-#enum ReleaseStatus {
-#    GENERAL_AVAILABILITY
-#    MILESTONE
-#    SNAPSHOT
-#}

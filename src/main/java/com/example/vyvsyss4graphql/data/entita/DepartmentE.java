@@ -1,6 +1,8 @@
 package com.example.vyvsyss4graphql.data.entita;
 
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,6 +12,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "department")
+@Builder
+@AllArgsConstructor
 public class DepartmentE {
 
     @Id
