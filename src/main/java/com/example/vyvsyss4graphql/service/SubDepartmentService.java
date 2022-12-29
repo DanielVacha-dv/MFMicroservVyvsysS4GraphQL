@@ -36,7 +36,7 @@ public class SubDepartmentService {
     public Long createSubDepartment(SubDepartmentInput subDepartmentInput) {
         Optional<DepartmentE> depEnt= departmentService.findByIdEnt(subDepartmentInput.getDepartmentID());
         if (depEnt.isPresent()) {
-            SubDepartmentE dE = mapper.subDepartmentInputToSubDepartmentE(subDepartmentInput,depEnt.get());
+            SubDepartmentE dE = mapper.SubDepartmentEToSubDepartmentDto(subDepartmentInput,depEnt.get());
             dE = subDepartmentRepository.save(dE);
             return dE.getSubDepartmentId();
         }
