@@ -1,7 +1,7 @@
 package com.example.vyvsyss4graphql.service;
 
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
-import com.example.vyvsyss4graphql.entita.DepartmentE;
+import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.repository.SubDepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class SubDepartmentService {
 
     public List<SubDepartmentE> findAllByDepartmentId(DepartmentE dep) {
         List<SubDepartmentE> l = new ArrayList<>();
-        subDepartmentRepository.findAllByDepartment(dep).forEach(l::add);
+        l.addAll(subDepartmentRepository.findAllByDepartment(dep));
         return l;
     }
 }

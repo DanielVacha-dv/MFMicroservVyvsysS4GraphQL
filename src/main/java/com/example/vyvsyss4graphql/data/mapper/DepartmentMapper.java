@@ -1,7 +1,7 @@
 package com.example.vyvsyss4graphql.data.mapper;
 
-import com.example.vyvsyss4graphql.dto.DepartmentDTO;
-import com.example.vyvsyss4graphql.entita.DepartmentE;
+import com.example.vyvsyss4graphql.data.dto.DepartmentDTO;
+import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

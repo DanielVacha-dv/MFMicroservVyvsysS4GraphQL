@@ -1,6 +1,5 @@
-package com.example.vyvsyss4graphql.dto;
+package com.example.vyvsyss4graphql.data.dto;
 
-import antlr.ANTLRParser;
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

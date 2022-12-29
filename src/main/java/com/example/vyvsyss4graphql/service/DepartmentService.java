@@ -1,8 +1,8 @@
 package com.example.vyvsyss4graphql.service;
 
 import com.example.vyvsyss4graphql.data.mapper.DepartmentMapper;
-import com.example.vyvsyss4graphql.dto.DepartmentDTO;
-import com.example.vyvsyss4graphql.entita.DepartmentE;
+import com.example.vyvsyss4graphql.data.dto.DepartmentDTO;
+import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.repository.DepartmentRepository;
 import com.example.vyvsyss4graphql.repository.SubDepartmentRepository;
 import org.mapstruct.factory.Mappers;
@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 /**
- * Contain alsou subdepartment by entity
+ * Contain also sub-department by entity
  */
 @Service
 public class DepartmentService {
@@ -29,7 +29,7 @@ public class DepartmentService {
     private DepartmentMapper mapper = Mappers.getMapper(DepartmentMapper.class);
 
     public List<DepartmentDTO> findAll() {
-        List<DepartmentE> allDepa = StreamSupport.stream(departmentRepository.findAll().spliterator(), false).collect(Collectors.toList());
+        List<DepartmentE> allDepa = StreamSupport.stream(departmentRepository.findAll().spliterator(), false).toList();
         List<DepartmentDTO> allDTO = new ArrayList<>();
         for (DepartmentE elem : allDepa) {
             allDTO.add(mapper.departmentEToDepartmentDTO(elem));
@@ -43,9 +43,6 @@ public class DepartmentService {
 
     public DepartmentDTO findById(Long id) {
         Optional<DepartmentE> byId = departmentRepository.findById(id);
-        if (byId.isPresent()) {
-            return mapper.departmentEToDepartmentDTO(byId.get());
-        }
-        return null;
+        return byId.map(departmentE -> mapper.departmentEToDepartmentDTO(departmentE)).orElse(null);
     }
 }

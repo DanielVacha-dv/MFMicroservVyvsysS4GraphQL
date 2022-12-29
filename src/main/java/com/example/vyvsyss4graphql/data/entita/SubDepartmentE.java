@@ -1,6 +1,5 @@
 package com.example.vyvsyss4graphql.data.entita;
 
-import com.example.vyvsyss4graphql.entita.DepartmentE;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

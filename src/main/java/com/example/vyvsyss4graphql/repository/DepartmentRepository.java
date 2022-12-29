@@ -1,6 +1,6 @@
 package com.example.vyvsyss4graphql.repository;
 
-import com.example.vyvsyss4graphql.entita.DepartmentE;
+import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.graphql.data.GraphQlRepository;
 
