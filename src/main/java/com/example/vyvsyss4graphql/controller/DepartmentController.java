@@ -26,8 +26,8 @@ public class DepartmentController {
     }
 
     @QueryMapping
-    public DepartmentDTO getDepartmentById(@Argument Integer id) {
-        return departmentService.findById(Long.valueOf(id));
+    public DepartmentDTO getDepartmentById(@Argument Long id) {
+        return departmentService.findById(id);
     }
 
     @MutationMapping
@@ -38,6 +38,11 @@ public class DepartmentController {
     @MutationMapping
     public Long updateDepartment(@Argument DepartmentInput input) {
         return departmentService.updateDepartment(input);
+    }
+
+    @MutationMapping
+    public Long deleteDepartment(@Argument Long id) {
+        return departmentService.deleteDepartment(id);
     }
 
 }

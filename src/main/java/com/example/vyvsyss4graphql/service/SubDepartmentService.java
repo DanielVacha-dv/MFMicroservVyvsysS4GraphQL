@@ -36,13 +36,6 @@ public class SubDepartmentService {
         return new ArrayList<>(subDepartmentRepository.findAllByDepartment(dep));
     }
 
-    public Long createSubDepartment(SubDepartmentInput subDepartmentInput, DepartmentE departmentE) {
-//        Optional<DepartmentE> depEnt = departmentService.findByIdEnt(subDepartmentInput.getDepartmentID());
-        SubDepartmentE dE = mapper.SubDepartmentEToSubDepartmentDto(subDepartmentInput, departmentE);
-        dE = subDepartmentRepository.save(dE);
-        return dE.getSubDepartmentId();
-    }
-
     public Long createSubDepartment(SubDepartmentE subDepEnt) {
         return subDepartmentRepository.save(subDepEnt).getSubDepartmentId();
     }

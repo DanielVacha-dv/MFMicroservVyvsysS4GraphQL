@@ -21,7 +21,7 @@ public interface DepartmentMapper {
                 .departmentId(source.getDepartmentId())
                 .name(source.getName())
                 .comment(source.getComment())
-                .subDepartmentL(source.getSubDepartmentL().stream().map(mapper::SubDepartmentEToSubDepartmentDto).collect(Collectors.toList()))
+                .subDepartmentL(source.getSubDepartmentL().stream().map(mapper::subDepartmentEToSubDepartmentDto).collect(Collectors.toList()))
                 .build();
     }
 

@@ -9,8 +9,11 @@ type Query {
 }
 type Mutation {
     createDepartment(input: DepartmentInput!): ID
+    deleteDepartment(id: Int!): ID
     updateDepartment(input: DepartmentInput!): ID
     createSubDepartment(input: SubDepartmentInput!): ID
+    deleteSubDepartment(id: [Int]!): ID
+#    todo update sub-department
 }
 
 type Department {

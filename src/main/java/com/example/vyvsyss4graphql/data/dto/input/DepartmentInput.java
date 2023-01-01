@@ -22,5 +22,4 @@ public class DepartmentInput {
     @Nullable
     private List<Long> subDepartmentIds;
 
-
 }

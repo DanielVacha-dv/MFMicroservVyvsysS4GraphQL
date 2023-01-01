@@ -8,14 +8,14 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface SubDepartmentMapper {
-    default SubDepartmentE SubDepartmentEToSubDepartmentDto(SubDepartmentInput subDepartmentInput, DepartmentE departmentE) {
+    default SubDepartmentE subDepartmentInputToSubDepartmentDto(SubDepartmentInput subDepartmentInput, DepartmentE departmentE) {
         return SubDepartmentE.builder()
                 .department(departmentE)
                 .subDepartmentName(subDepartmentInput.getSubDepartmentName())
                 .subDepartmentComment(subDepartmentInput.getSubDepartmentComment()).build();
     }
 
-    default SubDepartmentDTO SubDepartmentEToSubDepartmentDto(SubDepartmentE subDepartmentE) {
+    default SubDepartmentDTO subDepartmentEToSubDepartmentDto(SubDepartmentE subDepartmentE) {
         return SubDepartmentDTO.builder()
                 .subDepartmentId(subDepartmentE.getDepartment().getDepartmentId())
                 .subDepartmentName(subDepartmentE.getSubDepartmentName())

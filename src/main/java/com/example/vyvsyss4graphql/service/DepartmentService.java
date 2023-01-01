@@ -2,9 +2,11 @@ package com.example.vyvsyss4graphql.service;
 
 import com.example.vyvsyss4graphql.data.dto.DepartmentDTO;
 import com.example.vyvsyss4graphql.data.dto.input.DepartmentInput;
+import com.example.vyvsyss4graphql.data.dto.input.SubDepartmentInput;
 import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import com.example.vyvsyss4graphql.data.mapper.DepartmentMapper;
+import com.example.vyvsyss4graphql.data.mapper.SubDepartmentMapper;
 import com.example.vyvsyss4graphql.repository.DepartmentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
@@ -31,6 +33,7 @@ public class DepartmentService {
     private SubDepartmentService subDepartmentService;
 
     private final DepartmentMapper mapper = Mappers.getMapper(DepartmentMapper.class);
+    private final SubDepartmentMapper mapperSDM = Mappers.getMapper(SubDepartmentMapper.class);
 
     public List<DepartmentDTO> findAll() {
         List<DepartmentE> allDepa = StreamSupport.stream(departmentRepository.findAll().spliterator(), false).toList();
@@ -77,5 +80,24 @@ public class DepartmentService {
             departmentRepository.save(depE);
         }
         return dE.getDepartmentId();
+    }
+
+    public Long createSubDepartment(SubDepartmentInput subDepartmentInput) {
+        assert subDepartmentInput.getDepartmentID() != null;
+        Optional<DepartmentE> dEr = departmentRepository.findById(subDepartmentInput.getDepartmentID());
+        if (dEr.isPresent()) {
+            DepartmentE depE = dEr.get();
+            SubDepartmentE dE = mapperSDM.subDepartmentInputToSubDepartmentDto(subDepartmentInput, depE);
+            depE.addSubDepartment(dE);
+            log.info(" add sub-department " + dE);
+            DepartmentE savedDepE=  departmentRepository.save(depE);
+            return savedDepE.getDepartmentId();
+        }
+        return -1L;
+    }
+
+    public Long deleteDepartment(Long id) {
+        departmentRepository.deleteById(id);
+        return id;
     }
 }

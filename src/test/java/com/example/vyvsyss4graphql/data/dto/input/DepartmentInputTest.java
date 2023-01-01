@@ -7,7 +7,7 @@ class DepartmentInputTest {
 
     @Test
     void initWithNUll() {
-        DepartmentInput d = new DepartmentInput();
+        DepartmentInput d =  DepartmentInput.builder().build();
         d.setName(null);
         d.setName("Name");
 //        d.returnValNull();
