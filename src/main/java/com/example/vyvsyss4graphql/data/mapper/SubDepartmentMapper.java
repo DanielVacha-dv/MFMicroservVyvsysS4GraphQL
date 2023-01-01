@@ -10,14 +10,14 @@ import org.mapstruct.Mapper;
 public interface SubDepartmentMapper {
     default SubDepartmentE SubDepartmentEToSubDepartmentDto(SubDepartmentInput subDepartmentInput, DepartmentE departmentE) {
         return SubDepartmentE.builder()
-//                .department(departmentE)
+                .department(departmentE)
                 .subDepartmentName(subDepartmentInput.getSubDepartmentName())
                 .subDepartmentComment(subDepartmentInput.getSubDepartmentComment()).build();
     }
 
     default SubDepartmentDTO SubDepartmentEToSubDepartmentDto(SubDepartmentE subDepartmentE) {
         return SubDepartmentDTO.builder()
-//                .subDepartmentId(subDepartmentE.getDepartment().getDepartmentId())
+                .subDepartmentId(subDepartmentE.getDepartment().getDepartmentId())
                 .subDepartmentName(subDepartmentE.getSubDepartmentName())
                 .subDepartmentComment(subDepartmentE.getSubDepartmentComment())
                 .build();

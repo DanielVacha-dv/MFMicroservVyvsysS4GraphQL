@@ -1,8 +1,6 @@
 package com.example.vyvsyss4graphql.data.entita;
 
 import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -10,6 +8,8 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Setter
 @Getter
+@ToString
+@EqualsAndHashCode
 @Table(name = "subdepartment")
 @Builder
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class SubDepartmentE {
 
     @ManyToOne//(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "department_ID")
-////    @OnDelete(action = OnDeleteAction.CASCADE)
+    // in DepartmentE is mappedBy right this entity
     private DepartmentE department;
 
     public SubDepartmentE() {
@@ -44,35 +44,4 @@ public class SubDepartmentE {
         this.department = department;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        SubDepartmentE that = (SubDepartmentE) o;
-
-        if (subDepartmentId != null ? !subDepartmentId.equals(that.subDepartmentId) : that.subDepartmentId != null)
-            return false;
-        if (subDepartmentName != null ? !subDepartmentName.equals(that.subDepartmentName) : that.subDepartmentName != null)
-            return false;
-        return subDepartmentComment != null ? subDepartmentComment.equals(that.subDepartmentComment) : that.subDepartmentComment == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = subDepartmentId != null ? subDepartmentId.hashCode() : 0;
-        result = 31 * result + (subDepartmentName != null ? subDepartmentName.hashCode() : 0);
-        result = 31 * result + (subDepartmentComment != null ? subDepartmentComment.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "SubDepartmentE{" +
-                "subDepartmentId=" + subDepartmentId +
-                ", subDepartmentName='" + subDepartmentName + '\'' +
-                ", subDepartmentComment='" + subDepartmentComment + '\'' +
-                ", department=" + department +
-                '}';
-    }
 }

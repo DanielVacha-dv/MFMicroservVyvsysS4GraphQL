@@ -1,9 +1,6 @@
 package com.example.vyvsyss4graphql.data.entita;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -11,6 +8,8 @@ import java.util.List;
 
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
 @Entity
 @Table(name = "department")
 @Builder
@@ -19,7 +18,6 @@ public class DepartmentE {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "department_ID", unique = true, nullable = false)
     private Long departmentId;
 
@@ -48,13 +46,4 @@ public class DepartmentE {
         return departmentId;
     }
 
-    @Override
-    public String toString() {
-        return "DepartmentE{" +
-                "departmentId=" + departmentId +
-                ", name='" + name + '\'' +
-                ", comment='" + comment + '\'' +
-                ", subDepartmentL=" + subDepartmentL +
-                '}';
-    }
 }
