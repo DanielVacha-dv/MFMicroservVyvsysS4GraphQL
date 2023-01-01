@@ -1,11 +1,8 @@
 package com.example.vyvsyss4graphql.controller;
 
-import com.example.vyvsyss4graphql.data.dto.input.DepartmentInput;
-import com.example.vyvsyss4graphql.data.mapper.DepartmentMapper;
 import com.example.vyvsyss4graphql.data.dto.DepartmentDTO;
-import com.example.vyvsyss4graphql.data.entita.DepartmentE;
+import com.example.vyvsyss4graphql.data.dto.input.DepartmentInput;
 import com.example.vyvsyss4graphql.service.DepartmentService;
-import com.example.vyvsyss4graphql.service.SubDepartmentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -36,6 +33,11 @@ public class DepartmentController {
     @MutationMapping
     public Long createDepartment(@Argument DepartmentInput input) {
         return departmentService.createDepartment(input);
+    }
+
+    @MutationMapping
+    public Long updateDepartment(@Argument DepartmentInput input) {
+        return departmentService.updateDepartment(input);
     }
 
 }

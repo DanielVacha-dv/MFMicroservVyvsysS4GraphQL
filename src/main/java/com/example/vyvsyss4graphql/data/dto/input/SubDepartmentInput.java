@@ -1,6 +1,6 @@
 package com.example.vyvsyss4graphql.data.dto.input;
 
-import io.micrometer.core.lang.Nullable;
+import org.springframework.lang.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 

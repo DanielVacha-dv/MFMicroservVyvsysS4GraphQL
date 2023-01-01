@@ -11,13 +11,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SubDepartmentService {
 
-    @Autowired
-    private DepartmentService departmentService;
     @Autowired
     private SubDepartmentRepository subDepartmentRepository;
 
@@ -29,17 +26,28 @@ public class SubDepartmentService {
         return l;
     }
 
+    public List<SubDepartmentE> findAllByIds(List<Long> subDepartmentId) {
+        List<SubDepartmentE> l = new ArrayList<>();
+        subDepartmentRepository.findAllById(subDepartmentId).forEach(l::add);
+        return l;
+    }
+
     public List<SubDepartmentE> findAllByDepartmentId(DepartmentE dep) {
         return new ArrayList<>(subDepartmentRepository.findAllByDepartment(dep));
     }
 
-    public Long createSubDepartment(SubDepartmentInput subDepartmentInput) {
-        Optional<DepartmentE> depEnt= departmentService.findByIdEnt(subDepartmentInput.getDepartmentID());
-        if (depEnt.isPresent()) {
-            SubDepartmentE dE = mapper.SubDepartmentEToSubDepartmentDto(subDepartmentInput,depEnt.get());
-            dE = subDepartmentRepository.save(dE);
-            return dE.getSubDepartmentId();
-        }
-        return null;
+    public Long createSubDepartment(SubDepartmentInput subDepartmentInput, DepartmentE departmentE) {
+//        Optional<DepartmentE> depEnt = departmentService.findByIdEnt(subDepartmentInput.getDepartmentID());
+        SubDepartmentE dE = mapper.SubDepartmentEToSubDepartmentDto(subDepartmentInput, departmentE);
+        dE = subDepartmentRepository.save(dE);
+        return dE.getSubDepartmentId();
+    }
+
+    public Long createSubDepartment(SubDepartmentE subDepEnt) {
+        return subDepartmentRepository.save(subDepEnt).getSubDepartmentId();
+    }
+
+    public void deleteByIds(List<Long> iDs) {
+        subDepartmentRepository.deleteAllById(iDs);
     }
 }

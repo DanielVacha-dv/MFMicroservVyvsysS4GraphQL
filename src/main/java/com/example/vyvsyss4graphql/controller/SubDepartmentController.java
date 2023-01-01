@@ -25,6 +25,7 @@ public class SubDepartmentController {
 
     @MutationMapping
     public Long createSubDepartment(@Argument SubDepartmentInput input) {
-        return subDepartmentService.createSubDepartment(input);
+//        return subDepartmentService.createSubDepartment(input);
+        return 1L;
     }
 }

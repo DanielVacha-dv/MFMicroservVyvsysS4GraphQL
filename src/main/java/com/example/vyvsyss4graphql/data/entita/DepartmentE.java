@@ -2,13 +2,15 @@ package com.example.vyvsyss4graphql.data.entita;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "department")
 @Builder
@@ -28,7 +30,7 @@ public class DepartmentE {
     @Column(name = "comment")
     private String comment;
 
-    @OneToMany(mappedBy = "department",
+    @OneToMany( mappedBy = "department",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private List<SubDepartmentE> subDepartmentL;
@@ -44,5 +46,15 @@ public class DepartmentE {
 
     public Long getDepartmentId() {
         return departmentId;
+    }
+
+    @Override
+    public String toString() {
+        return "DepartmentE{" +
+                "departmentId=" + departmentId +
+                ", name='" + name + '\'' +
+                ", comment='" + comment + '\'' +
+                ", subDepartmentL=" + subDepartmentL +
+                '}';
     }
 }

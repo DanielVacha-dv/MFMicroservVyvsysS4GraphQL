@@ -7,7 +7,6 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Data
 @Entity
 @Setter
 @Getter
@@ -18,8 +17,8 @@ public class SubDepartmentE {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "subdepartment_ID", unique = true, nullable = false)
+//    @Basic(optional = false)
+    @Column(name = "subdepartment_ID", unique = true)
     private Long subDepartmentId;
 
     @NotBlank
@@ -29,9 +28,9 @@ public class SubDepartmentE {
     @Column(name = "subdepartment_comment")
     private String subDepartmentComment;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "department_ID", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @ManyToOne//(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_ID")
+////    @OnDelete(action = OnDeleteAction.CASCADE)
     private DepartmentE department;
 
     public SubDepartmentE() {
@@ -65,5 +64,15 @@ public class SubDepartmentE {
         result = 31 * result + (subDepartmentName != null ? subDepartmentName.hashCode() : 0);
         result = 31 * result + (subDepartmentComment != null ? subDepartmentComment.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "SubDepartmentE{" +
+                "subDepartmentId=" + subDepartmentId +
+                ", subDepartmentName='" + subDepartmentName + '\'' +
+                ", subDepartmentComment='" + subDepartmentComment + '\'' +
+                ", department=" + department +
+                '}';
     }
 }

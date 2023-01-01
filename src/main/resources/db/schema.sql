@@ -6,4 +6,4 @@ CREATE TABLE department
     comment       VARCHAR(50) NOT NULL
 );
 
-insert into department (comment,name) values ('dopr komment','dopravka jmeno');
+-- insert into department (comment,name) values ('dopr komment','dopravka jmeno');
