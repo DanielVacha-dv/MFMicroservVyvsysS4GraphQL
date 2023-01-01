@@ -8,7 +8,6 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Setter
 @Getter
-@ToString
 @EqualsAndHashCode
 @Table(name = "subdepartment")
 @Builder
@@ -17,7 +16,6 @@ public class SubDepartmentE {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Basic(optional = false)
     @Column(name = "subdepartment_ID", unique = true)
     private Long subDepartmentId;
 
@@ -44,4 +42,20 @@ public class SubDepartmentE {
         this.department = department;
     }
 
+    @Override
+    public String toString() {
+        if (department != null) {
+            return "SubDepartmentE{" +
+                    "subDepartmentId=" + subDepartmentId +
+                    ", subDepartmentName='" + subDepartmentName + '\'' +
+                    ", subDepartmentComment='" + subDepartmentComment + '\'' +
+                    ", department=" + department.getName() +
+                    '}';
+        }
+        return "SubDepartmentE{" +
+                "subDepartmentId=" + subDepartmentId +
+                ", subDepartmentName='" + subDepartmentName + '\'' +
+                ", subDepartmentComment='" + subDepartmentComment + '\'' +
+                '}';
+    }
 }

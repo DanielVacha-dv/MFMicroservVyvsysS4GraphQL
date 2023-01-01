@@ -6,6 +6,7 @@ import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import com.example.vyvsyss4graphql.data.mapper.DepartmentMapper;
 import com.example.vyvsyss4graphql.repository.DepartmentRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import java.util.stream.StreamSupport;
  * Contain also sub-department by entity
  */
 @Service
+@Slf4j
 public class DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepository;
@@ -68,9 +70,10 @@ public class DepartmentService {
             DepartmentE depE = dEr.get();
             depE.setName(dE.getName());
             depE.setComment(dE.getComment());
-            List<SubDepartmentE> lsub=  depE.getSubDepartmentL();
+            List<SubDepartmentE> lsub = depE.getSubDepartmentL();
+            log.info(" remove subdepartment " + lsub);
             List<SubDepartmentE> finSubDep = lsub.stream().filter(el -> !DepartmentInput.getSubDepartmentIds().contains(el.getSubDepartmentId())).toList();
-            lsub.removeAll(finSubDep);
+            depE.removeSubDepartment(finSubDep);
             departmentRepository.save(depE);
         }
         return dE.getDepartmentId();

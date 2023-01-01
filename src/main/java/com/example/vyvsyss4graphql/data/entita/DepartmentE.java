@@ -46,4 +46,18 @@ public class DepartmentE {
         return departmentId;
     }
 
+    public void addSubDepartment(SubDepartmentE subDepartmentE) {
+        subDepartmentL.add(subDepartmentE);
+        subDepartmentE.setDepartment(this);
+    }
+    public void removeSubDepartment(SubDepartmentE subDepartmentE) {
+        subDepartmentL.remove(subDepartmentE);
+        subDepartmentE.setDepartment(null);
+    }
+    public void removeSubDepartment(List<SubDepartmentE> subDepartmentEL) {
+        for (SubDepartmentE elem:subDepartmentEL) {
+            subDepartmentL.remove(elem);
+            elem.setDepartment(null);
+        }
+    }
 }
