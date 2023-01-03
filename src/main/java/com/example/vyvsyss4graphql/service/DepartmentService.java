@@ -14,8 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -90,7 +92,7 @@ public class DepartmentService {
             SubDepartmentE dE = mapperSDM.subDepartmentInputToSubDepartmentDto(subDepartmentInput, depE);
             depE.addSubDepartment(dE);
             log.info(" add sub-department " + dE);
-            DepartmentE savedDepE=  departmentRepository.save(depE);
+            DepartmentE savedDepE = departmentRepository.save(depE);
             return savedDepE.getDepartmentId();
         }
         return -1L;
@@ -99,5 +101,30 @@ public class DepartmentService {
     public Long deleteDepartment(Long id) {
         departmentRepository.deleteById(id);
         return id;
+    }
+
+    @Transactional
+    public Long updateSubDepartment(SubDepartmentInput input) {
+        Optional<SubDepartmentE> byId = subDepartmentService.findById(input.getSubDepartmentId());
+        if (byId.isPresent()) {
+            SubDepartmentE subDepartmentE = byId.get();
+            subDepartmentE.setSubDepartmentComment(input.getSubDepartmentComment());
+            subDepartmentE.setSubDepartmentName(input.getSubDepartmentName());
+            if (!Objects.equals(subDepartmentE.getDepartment().getDepartmentId(), input.getDepartmentID())) {
+                // move to different department
+                updateSubDepartmentMoveToNextDepartment(subDepartmentE);
+            }
+            return byId.get().getSubDepartmentId();
+        }
+        throw new EntityNotFoundException(input.toString());
+    }
+
+    public void updateSubDepartmentMoveToNextDepartment(SubDepartmentE subDepartmentE) {
+        Optional<DepartmentE> byIdEnt = findByIdEnt(subDepartmentE.getSubDepartmentId());
+        if (byIdEnt.isPresent()) {
+            DepartmentE departmentE = byIdEnt.get();
+            departmentE.addSubDepartment(subDepartmentE);
+            departmentRepository.save(departmentE);
+        }
     }
 }

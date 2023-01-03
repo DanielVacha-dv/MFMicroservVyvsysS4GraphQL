@@ -7,6 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SubDepartmentInput {
+
+    @Nullable
+    private Long subDepartmentId;
     @Nullable
     private Long departmentID;
     @Nullable

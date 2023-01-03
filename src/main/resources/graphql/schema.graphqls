@@ -13,7 +13,7 @@ type Mutation {
     updateDepartment(input: DepartmentInput!): ID
     createSubDepartment(input: SubDepartmentInput!): ID
     deleteSubDepartment(id: [Int]!): ID
-#    todo update sub-department
+    updateSubDepartment(input: SubDepartmentInput!): ID
 }
 
 type Department {
@@ -31,6 +31,7 @@ input DepartmentInput {
 }
 
 type SubDepartment {
+    departmentID: Int
     subDepartmentId: Int
     subDepartmentName: String
     subDepartmentComment: String
@@ -38,6 +39,7 @@ type SubDepartment {
 
 input SubDepartmentInput {
     departmentID: Int
+    subDepartmentId: Int
     subDepartmentName: String
     subDepartmentComment: String
 }

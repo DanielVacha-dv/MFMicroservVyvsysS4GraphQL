@@ -1,6 +1,5 @@
 package com.example.vyvsyss4graphql.service;
 
-import com.example.vyvsyss4graphql.data.dto.input.SubDepartmentInput;
 import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import com.example.vyvsyss4graphql.data.mapper.SubDepartmentMapper;
@@ -11,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SubDepartmentService {
@@ -32,6 +32,10 @@ public class SubDepartmentService {
         return l;
     }
 
+    public Optional<SubDepartmentE> findById(Long subDepartmentId) {
+        return subDepartmentRepository.findById(subDepartmentId);
+    }
+
     public List<SubDepartmentE> findAllByDepartmentId(DepartmentE dep) {
         return new ArrayList<>(subDepartmentRepository.findAllByDepartment(dep));
     }
@@ -39,6 +43,7 @@ public class SubDepartmentService {
     public Long createSubDepartment(SubDepartmentE subDepEnt) {
         return subDepartmentRepository.save(subDepEnt).getSubDepartmentId();
     }
+
 
     public void deleteByIds(List<Long> iDs) {
         subDepartmentRepository.deleteAllById(iDs);

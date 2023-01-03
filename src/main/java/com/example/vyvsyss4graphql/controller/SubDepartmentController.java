@@ -11,7 +11,6 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,6 +31,11 @@ public class SubDepartmentController {
     @MutationMapping
     public Long createSubDepartment(@Argument SubDepartmentInput input) {
         return departmentService.createSubDepartment(input);
+    }
+
+    @MutationMapping
+    public Long updateSubDepartment(@Argument SubDepartmentInput input) {
+        return departmentService.updateSubDepartment(input);
     }
 
     @MutationMapping
