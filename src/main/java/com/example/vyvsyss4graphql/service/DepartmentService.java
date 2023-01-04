@@ -112,15 +112,15 @@ public class DepartmentService {
             subDepartmentE.setSubDepartmentName(input.getSubDepartmentName());
             if (!Objects.equals(subDepartmentE.getDepartment().getDepartmentId(), input.getDepartmentID())) {
                 // move to different department
-                updateSubDepartmentMoveToNextDepartment(subDepartmentE);
+                updateSubDepartmentMoveToNextDepartment(subDepartmentE,input.getDepartmentID());
             }
             return byId.get().getSubDepartmentId();
         }
         throw new EntityNotFoundException(input.toString());
     }
 
-    public void updateSubDepartmentMoveToNextDepartment(SubDepartmentE subDepartmentE) {
-        Optional<DepartmentE> byIdEnt = findByIdEnt(subDepartmentE.getSubDepartmentId());
+    public void updateSubDepartmentMoveToNextDepartment(SubDepartmentE subDepartmentE,Long newDepartmentId) {
+        Optional<DepartmentE> byIdEnt = findByIdEnt(newDepartmentId);
         if (byIdEnt.isPresent()) {
             DepartmentE departmentE = byIdEnt.get();
             departmentE.addSubDepartment(subDepartmentE);
