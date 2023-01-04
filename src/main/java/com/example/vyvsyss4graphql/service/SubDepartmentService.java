@@ -18,7 +18,6 @@ public class SubDepartmentService {
     @Autowired
     private SubDepartmentRepository subDepartmentRepository;
 
-    private final SubDepartmentMapper mapper = Mappers.getMapper(SubDepartmentMapper.class);
 
     public List<SubDepartmentE> findAll() {
         List<SubDepartmentE> l = new ArrayList<>();
@@ -34,14 +33,6 @@ public class SubDepartmentService {
 
     public Optional<SubDepartmentE> findById(Long subDepartmentId) {
         return subDepartmentRepository.findById(subDepartmentId);
-    }
-
-    public List<SubDepartmentE> findAllByDepartmentId(DepartmentE dep) {
-        return new ArrayList<>(subDepartmentRepository.findAllByDepartment(dep));
-    }
-
-    public Long createSubDepartment(SubDepartmentE subDepEnt) {
-        return subDepartmentRepository.save(subDepEnt).getSubDepartmentId();
     }
 
 
