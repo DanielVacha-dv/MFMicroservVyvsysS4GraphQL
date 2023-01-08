@@ -30,17 +30,18 @@ public class MyRepositoriesInitializer implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        DepartmentE d1 = new DepartmentE(1L, "Dopravka", "dopr kommentes");
-        DepartmentE d2 = new DepartmentE(2L, "Socka", "soc komment");
-        List<DepartmentE> repositoryList = Arrays.asList(d1, d2);
-        departmentRepository.saveAll(repositoryList);
-        List<DepartmentE> l = departmentService.findAllEntities();
-        SubDepartmentE sub1 = new SubDepartmentE(1L, l.get(0), "Dopr pasy 1", "sub dopr komment");
-        SubDepartmentE sub2 = new SubDepartmentE(2L, l.get(0), "Dopr pasy 2", "sub dopr komment");
-        SubDepartmentE sub3 = new SubDepartmentE(3L, l.get(1), "Socka op 1", "sub soc komment");
-        SubDepartmentE sub4 = new SubDepartmentE(4L, l.get(1), "Socka op 2", "sub soc komment");
-        List<SubDepartmentE> subDepartmentRepositoryList = Arrays.asList(sub1, sub2, sub3, sub4);
-        subDepartmentRepository.saveAll(subDepartmentRepositoryList);
+        // Uncomment to init DB
+//        DepartmentE d1 = new DepartmentE(1L, "Dopravka", "dopr kommentes");
+//        DepartmentE d2 = new DepartmentE(2L, "Socka", "soc komment");
+//        List<DepartmentE> repositoryList = Arrays.asList(d1, d2);
+//        departmentRepository.saveAll(repositoryList);
+//        List<DepartmentE> l = departmentService.findAllEntities();
+//        SubDepartmentE sub1 = new SubDepartmentE(1L, l.get(0), "Dopr pasy 1", "sub dopr komment");
+//        SubDepartmentE sub2 = new SubDepartmentE(2L, l.get(0), "Dopr pasy 2", "sub dopr komment");
+//        SubDepartmentE sub3 = new SubDepartmentE(3L, l.get(1), "Socka op 1", "sub soc komment");
+//        SubDepartmentE sub4 = new SubDepartmentE(4L, l.get(1), "Socka op 2", "sub soc komment");
+//        List<SubDepartmentE> subDepartmentRepositoryList = Arrays.asList(sub1, sub2, sub3, sub4);
+//        subDepartmentRepository.saveAll(subDepartmentRepositoryList);
         // test
 //        departmentService.updateDepartment(getDepartmentInput());
     }
