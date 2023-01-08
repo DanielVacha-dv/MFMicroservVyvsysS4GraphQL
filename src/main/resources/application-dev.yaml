@@ -1,0 +1,16 @@
+#enabling the Postgres DB
+server:
+  port: 8083
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    drop-first: true
+    enabled: true
+  datasource:
+    username: postgres
+    password: daniel11
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/vyvsysMicroS
+  jpa:
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect

@@ -26,9 +26,12 @@ public class SubDepartmentE {
     @Column(name = "subdepartment_comment")
     private String subDepartmentComment;
 
-    @ManyToOne//(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @Column(name = "subdepartment_info")
+    private String subDepartmentInfo;
+
+    @ManyToOne
     @JoinColumn(name = "department_ID")
-    // in DepartmentE is mappedBy right this entity
+
     private DepartmentE department;
 
     public SubDepartmentE() {
