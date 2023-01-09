@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-01-07T15:03:07.000Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="dk8M0RkZhsNAldg-mdd3" version="20.8.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-09T19:28:25.443Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="01adOQsaBu8CCTV89XgD" version="20.8.3" type="github">
   <diagram name="Page-1" id="bd83a815-5ea8-2e97-e5ec-87c9f400f2fa">
-    <mxGraphModel dx="2049" dy="1194" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1432" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" style=";html=1;" />
         <mxCell id="1" style=";html=1;" parent="0" />
@@ -78,6 +78,46 @@
         </mxCell>
         <mxCell id="1516e18e63f93b96-1" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th&gt;Actor\Permission&lt;/th&gt;&lt;th&gt;read/see&amp;nbsp; subdepartment&lt;/th&gt;&lt;th&gt;Create subdepartment&lt;/th&gt;&lt;th&gt;delete&amp;nbsp; subdepartment&lt;/th&gt;&lt;th&gt;update subdepartment&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&amp;nbsp;department &lt;br&gt;sub-department user&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;YES&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;NO&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;&quot;&gt;NO&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;NO&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td style=&quot;text-align: center; background-color: rgb(167, 201, 66); color: rgb(255, 255, 255); border: 1px solid rgb(152, 191, 33);&quot;&gt;department manager/&lt;br&gt;manager&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;&quot;&gt;YES&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;&quot;&gt;YES&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;&quot;&gt;YES&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;&quot;&gt;YES&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;admin&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;YES&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;YES&lt;/span&gt;&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;YES&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;td style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;YES&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;overflow=fill;rounded=1;shadow=1;fontSize=14;sketch=1;curveFitting=1;jiggle=2;fillStyle=solid;glass=0;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
           <mxGeometry x="60" y="70" width="1250" height="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="fZN-fvs3Vzddy61dXEyA-2" target="fZN-fvs3Vzddy61dXEyA-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-2" value="subdepartment, department user&lt;br&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1310" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-3" value="UC_U1&lt;br&gt;&amp;nbsp;serve request for of this subdepartment" style="ellipse;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1300" width="290" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="fZN-fvs3Vzddy61dXEyA-5" target="fZN-fvs3Vzddy61dXEyA-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="445" y="1650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-5" value="department manager&lt;br&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1600" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-10" value="UC_M1&amp;nbsp; &lt;br&gt;assign a user to a department" style="ellipse;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1580" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-11" value="UC_M2&amp;nbsp;&amp;nbsp;&lt;br&gt;assign a subdepartment to a department" style="ellipse;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1760" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="fZN-fvs3Vzddy61dXEyA-5" target="fZN-fvs3Vzddy61dXEyA-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="1710" as="sourcePoint" />
+            <mxPoint x="670" y="1810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;" edge="1" parent="1" source="fZN-fvs3Vzddy61dXEyA-13" target="fZN-fvs3Vzddy61dXEyA-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-13" value="admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="170" y="2120" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fZN-fvs3Vzddy61dXEyA-14" value="UC_A1&amp;nbsp; &lt;br&gt;create department and subdepartment" style="ellipse;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="620" y="2040" width="380" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
