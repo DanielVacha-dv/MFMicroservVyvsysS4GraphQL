@@ -10,9 +10,8 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @Slf4j
@@ -38,10 +37,13 @@ public class DepartmentController {
     }
 
     @MutationMapping
-    public Long createDepartment2(@Argument String  name,@Argument String comment) {
-        List<Long> lo=new ArrayList<>(List.of(2L));
+    public Long createDepartment2(
+            @Argument String name,
+            @Argument String comment,
+            @Argument List<Integer> subDepartmentIds) {
         DepartmentInput build = DepartmentInput.builder()
-                .name(name).comment(comment).subDepartmentIds(lo).build();
+                .name(name).comment(comment)
+                .subDepartmentIds(subDepartmentIds.stream().mapToLong(Integer::longValue).boxed().collect(Collectors.toList())).build();
         return departmentService.createDepartment(build);
     }
 
