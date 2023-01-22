@@ -10,7 +10,7 @@ type Query {
 type Mutation {
     createDepartment(input: DepartmentInput!): ID
     createDepartment2(name: String! comment: String  subDepartmentIds: [Int]) : ID
-    deleteDepartment(id: Int!): ID
+    deleteDepartment(departID: Int!): ID
     updateDepartment(input: DepartmentInput!): ID
     createSubDepartment(input: SubDepartmentInput!): ID
     deleteSubDepartment(id: [Int]!): ID

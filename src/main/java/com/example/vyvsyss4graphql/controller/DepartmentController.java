@@ -53,8 +53,8 @@ public class DepartmentController {
     }
 
     @MutationMapping
-    public Long deleteDepartment(@Argument Long id) {
-        return departmentService.deleteDepartment(id);
+    public Long deleteDepartment(@Argument Integer departID) {
+        return departmentService.deleteDepartment(departID.longValue());
     }
 
 }
