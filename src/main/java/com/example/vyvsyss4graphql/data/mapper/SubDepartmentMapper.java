@@ -17,6 +17,7 @@ public interface SubDepartmentMapper {
 
     default SubDepartmentDTO subDepartmentEToSubDepartmentDto(SubDepartmentE subDepartmentE) {
         return SubDepartmentDTO.builder()
+                .departmentId(subDepartmentE.getDepartment().getDepartmentId())
                 .subDepartmentId(subDepartmentE.getSubDepartmentId())
                 .subDepartmentName(subDepartmentE.getSubDepartmentName())
                 .subDepartmentComment(subDepartmentE.getSubDepartmentComment())

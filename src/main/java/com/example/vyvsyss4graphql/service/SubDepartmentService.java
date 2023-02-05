@@ -1,5 +1,6 @@
 package com.example.vyvsyss4graphql.service;
 
+import com.example.vyvsyss4graphql.data.dto.SubDepartmentDTO;
 import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import com.example.vyvsyss4graphql.data.mapper.SubDepartmentMapper;
@@ -18,10 +19,16 @@ public class SubDepartmentService {
     @Autowired
     private SubDepartmentRepository subDepartmentRepository;
 
+    @Autowired
+    private SubDepartmentMapper subDepartmentMapper;
 
-    public List<SubDepartmentE> findAll() {
-        List<SubDepartmentE> l = new ArrayList<>();
-        subDepartmentRepository.findAll().forEach(l::add);
+
+    public List<SubDepartmentDTO> findAll() {
+        List<SubDepartmentDTO> l = new ArrayList<>();
+        subDepartmentRepository.findAll().forEach(el -> {
+            SubDepartmentDTO subDepartmentDTO = subDepartmentMapper.subDepartmentEToSubDepartmentDto(el);
+            l.add(subDepartmentDTO);
+        });
         return l;
     }
 

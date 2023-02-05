@@ -1,5 +1,6 @@
 package com.example.vyvsyss4graphql.controller;
 
+import com.example.vyvsyss4graphql.data.dto.SubDepartmentDTO;
 import com.example.vyvsyss4graphql.data.dto.input.SubDepartmentInput;
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import com.example.vyvsyss4graphql.service.DepartmentService;
@@ -24,7 +25,7 @@ public class SubDepartmentController {
 
 
     @QueryMapping
-    public List<SubDepartmentE> getSubDepartment() {
+    public List<SubDepartmentDTO> getSubDepartment() {
         return subDepartmentService.findAll();
     }
 

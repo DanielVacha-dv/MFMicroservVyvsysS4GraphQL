@@ -32,7 +32,7 @@ input DepartmentInput {
 }
 
 type SubDepartment {
-    departmentID: Int
+    departmentId: Int
     subDepartmentId: Int
     subDepartmentName: String
     subDepartmentComment: String

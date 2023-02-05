@@ -10,6 +10,8 @@ import lombok.ToString;
 @ToString
 public class SubDepartmentDTO {
 
+    @JsonProperty("departmentId")
+    private Long departmentId;
     @JsonProperty("subDepartmentId")
     private Long subDepartmentId;
     @JsonProperty("subDepartmentName")
