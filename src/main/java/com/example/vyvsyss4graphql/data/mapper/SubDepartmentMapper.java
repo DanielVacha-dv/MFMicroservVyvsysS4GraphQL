@@ -5,22 +5,19 @@ import com.example.vyvsyss4graphql.data.dto.input.SubDepartmentInput;
 import com.example.vyvsyss4graphql.data.entita.DepartmentE;
 import com.example.vyvsyss4graphql.data.entita.SubDepartmentE;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
-public interface SubDepartmentMapper {
-    default SubDepartmentE subDepartmentInputToSubDepartmentDto(SubDepartmentInput subDepartmentInput, DepartmentE departmentE) {
+public abstract class SubDepartmentMapper {
+
+    public SubDepartmentE subDepartmentInputToSubDepartmentDto(SubDepartmentInput subDepartmentInput, DepartmentE departmentE) {
         return SubDepartmentE.builder()
                 .department(departmentE)
                 .subDepartmentName(subDepartmentInput.getSubDepartmentName())
                 .subDepartmentComment(subDepartmentInput.getSubDepartmentComment()).build();
     }
 
-    default SubDepartmentDTO subDepartmentEToSubDepartmentDto(SubDepartmentE subDepartmentE) {
-        return SubDepartmentDTO.builder()
-                .departmentId(subDepartmentE.getDepartment().getDepartmentId())
-                .subDepartmentId(subDepartmentE.getSubDepartmentId())
-                .subDepartmentName(subDepartmentE.getSubDepartmentName())
-                .subDepartmentComment(subDepartmentE.getSubDepartmentComment())
-                .build();
-    }
+    @Mapping(target="departmentId", source = "subDepartmentE.department.departmentId")
+    public abstract SubDepartmentDTO subDepartmentEToSubDepartmentDto(SubDepartmentE subDepartmentE);
+
 }
